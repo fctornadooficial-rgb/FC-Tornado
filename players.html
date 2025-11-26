@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Игроки — ФК Торнадо</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,18 +15,24 @@
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О клубе</a></li>
-                <li><a href="players.html">Игроки</a></li>
-                <li><a href="schedule.html">Матчи</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-                <li><a href="legends.html">Зал славы</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav>
+  <div class="container">
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="about.html">О клубе</a></li>
+      <li><a href="players.html">Игроки</a></li>
+      <li><a href="schedule.html">Матчи</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="legends.html">Зал славы</a></li>
+    </ul>
+  </div>
+</nav>
+
 
     <main class="container">
         <section>
@@ -96,7 +102,7 @@
                     <tr>
                         <td>8</td>
                         <td>Ваня Захаров</td>
-                        <td>Все</td>
+                        <td>Полузащитник,Нападающий</td>
                         <td>13</td>
                         <td>2024</td>
                     </tr>
@@ -112,13 +118,6 @@
                         <td>Лев Николаев</td>
                         <td>Полузащитник,Нападающий</td>
                         <td>12</td>
-                        <td>2025</td>
-                    </tr>
-                     <tr>
-                        <td>11</td>
-                        <td>Ваня Быстров</td>
-                        <td>Полузащитник,Нападающий,Защитник</td>
-                        <td>13</td>
                         <td>2025</td>
                     </tr>
                 </tbody>
@@ -138,6 +137,6 @@
             <p>В академии ФК «Торнадо» занимаются игроки от 5 до 10 лет. </p>
         </section>
     </main>
+<script src="mobile-menu.js"></script>
 </body>
-
 </html>
