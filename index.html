@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ФК Торнадо — Официальный сайт</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,18 +15,24 @@
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О клубе</a></li>
-                <li><a href="players.html">Игроки</a></li>
-                <li><a href="schedule.html">Матчи</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-                <li><a href="legends.html">Зал славы</a></li>
-            </ul>
-        </div>
-    </nav>
+ <nav>
+  <div class="container">
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="about.html">О клубе</a></li>
+      <li><a href="players.html">Игроки</a></li>
+      <li><a href="schedule.html">Матчи</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="legends.html">Зал славы</a></li>
+    </ul>
+  </div>
+</nav>
+
 
     <main class="container">
         <section>
@@ -38,17 +44,19 @@
             <h2>Последние новости</h2>
             <ul>
                 <li>Тренировочный сбор прошёл успешно.</li>
-                <li>Матвей Быстров переходит в торнадо Пожелаем удачи 💙🤍.</li>
-                <li>В клуб вернулась легенда(Анар Байрамов)</li>
+                <li>Новый спонсор подписал контракт с клубом.</li>
+                <li>В клуб вернулась легенда</li>
             </ul>
         </section>
     </main>
 
+   
     <footer>
         <div class="container">
             <p>&copy; 2025 ФК Торнадо. Все права защищены.</p>
         </div>
     </footer>
+<script src="mobile-menu.js"></script>
 </body>
-
 </html>
+
