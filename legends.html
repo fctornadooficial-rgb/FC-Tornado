@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>О клубе — ФК Торнадо</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,18 +16,24 @@
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О клубе</a></li>
-                <li><a href="players.html">Игроки</a></li>
-                <li><a href="schedule.html">Матчи</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-                <li><a href="legends.html">Зал славы</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav>
+  <div class="container">
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="about.html">О клубе</a></li>
+      <li><a href="players.html">Игроки</a></li>
+      <li><a href="schedule.html">Матчи</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="legends.html">Зал славы</a></li>
+    </ul>
+  </div>
+</nav>
+
 <!-- Раздел "Зал славы" -->
 
 <section id="hall-of-fame" class="section">
@@ -69,17 +75,9 @@
           <p>Один из лучших Бомбардиров клуба.участник праймого состава «Торнадо»</p>
         </div>
     </div>
-     </div>
-        <div class="legend-info">
-          <h3>Анто Кудрявцев</h3>
-          <p class="role">Вратарь ,Защитник</p>
-          <p>(2025)</p>
-          <p>Бывший тренер,Владелец клуба.участник праймого состава «Торнадо»</p>
-        </div>
-    </div>
   </div>
 </section>
+<script src="mobile-menu.js"></script>
 </body>
 </main>
 </html>
-
