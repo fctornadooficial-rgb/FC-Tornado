@@ -377,3 +377,46 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* Контейнер для логотипа */
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Стилизация изображения логотипа */
+.logo-img {
+  max-width: 150px;    /* Максимальный размер на десктопе */
+  height: auto;
+  display: block;
+}
+
+/* Адаптация для мобильных (<= 768px) */
+@media (max-width: 768px) {
+  .logo {
+    margin-bottom: 5px;  /* Меньше отступа на мобилках */
+  }
+
+  .logo-img {
+    max-width: 120px;   /* Уменьшаем логотип на телефонах */
+  }
+
+  header h1 {
+    font-size: 1.8rem; /* Немного уменьшаем заголовок */
+  }
+
+  header p {
+    font-size: 1rem;  /* Подзаголовок поменьше */
+  }
+}
+
+/* Дополнительно: если нужно центрировать всё в шапке на мобилках */
+@media (max-width: 480px) {
+  .container {
+    text-align: center;
+  }
+
+  header h1, header p {
+    text-align: center;
+  }
+}
+
