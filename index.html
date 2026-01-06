@@ -1,62 +1,579 @@
 <!DOCTYPE html>
 <html lang="ru">
+<script src="mobile-optimization.js"></script>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ФК Торнадо — Официальный сайт</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФК "ТОРНАДО" | Официальный сайт</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💙</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script:wght@400;700&family=Marck+Script&family=Bad+Script&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка */
+        header {
+            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            border-bottom: 8px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "⚽";
+            font-size: 200px;
+            position: absolute;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .club-name {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .club-name .emoji {
+            font-size: 3rem;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Основной контент */
+        .content-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 2rem auto;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e0e0;
+            max-width: 900px;
+        }
+
+        h2 {
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 0.7rem;
+            margin-bottom: 1.8rem;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2 i {
+            font-size: 1.8rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            border-left: 5px solid #2a5298;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(30, 60, 114, 0.1);
+        }
+
+        .info-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .color-samples {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .color-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .blue {
+            background-color: #1e3c72;
+        }
+
+        .white {
+            background-color: #ffffff;
+            color: #333;
+            border: 2px solid #e0e0e0;
+        }
+
+        /* Секция Telegram */
+        .telegram-section {
+            text-align: center;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            margin: 3rem auto;
+            max-width: 900px;
+            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.3);
+        }
+
+        .telegram-section h2 {
+            color: white;
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+            justify-content: center;
+        }
+
+        .telegram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            color: #1e3c72;
+            text-decoration: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .telegram-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+            background: #f8f9fa;
+        }
+
+        .telegram-icon {
+            font-size: 2.2rem;
+        }
+
+        /* Секция дружественного клуба */
+        .friends-section {
+            text-align: center;
+            background: linear-gradient(135deg, #000000 0%, #8B0000 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            margin: 3rem auto;
+            max-width: 900px;
+            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.3);
+            border: 3px solid #ff0000;
+        }
+
+        .friends-section h2 {
+            color: white;
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+            justify-content: center;
+        }
+
+        .friends-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            color: #8B0000;
+            text-decoration: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid #ff0000;
+        }
+
+        .friends-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 0, 0, 0.3);
+            background: #f8f9fa;
+            color: #000000;
+        }
+
+        .wolf-icon {
+            font-size: 2.2rem;
+        }
+
+        /* Трофеи */
+        .trophies-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 2rem auto;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e0e0;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .empty-trophy {
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            border-radius: 12px;
+            border: 2px dashed #1e3c72;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .empty-trophy::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 10% 20%, rgba(30, 60, 114, 0.03) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(30, 60, 114, 0.03) 0%, transparent 20%);
+        }
+
+        .trophy-icon-large {
+            font-size: 5rem;
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            opacity: 0.7;
+            filter: grayscale(30%);
+            animation: gentlePulse 3s infinite ease-in-out;
+        }
+
+        .no-trophies-text {
+            font-family: 'Dancing Script', 'Caveat', 'Marck Script', 'Bad Script', cursive;
+            font-size: 4.5rem;
+            color: #1e3c72;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        .no-trophies-subtext {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+
+        .trophy-placeholder {
+            display: inline-block;
+            margin: 1rem;
+            padding: 0.5rem 1.5rem;
+            background: #f0f4ff;
+            border-radius: 20px;
+            color: #1e3c72;
+            font-size: 0.9rem;
+            border: 1px solid #d0d9ff;
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        /* Анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .club-name {
+                font-size: 2.5rem;
+            }
+            
+            .content-section, .telegram-section, .friends-section, .trophies-section {
+                padding: 1.8rem;
+                margin: 1.5rem 15px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .telegram-link, .friends-link {
+                padding: 1rem 1.8rem;
+                font-size: 1.1rem;
+            }
+            
+            .no-trophies-text {
+                font-size: 3.5rem;
+            }
+            
+            .trophy-icon-large {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .club-name {
+                font-size: 2rem;
+            }
+            
+            header {
+                padding: 3rem 1rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            .no-trophies-text {
+                font-size: 2.8rem;
+            }
+            
+            .trophy-icon-large {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
     <header>
         <div class="container">
-            <h1>ФК Торнадо</h1>
-            <p>Сила в единстве!</p>
+            <h1 class="club-name">
+                <span class="emoji">💙</span>
+                ФК "ТОРНАДО"
+                <span class="emoji">🤍</span>
+            </h1>
+            <p class="tagline">Футбольная команда из города Боровичи. Основана 29.07.2025</p>
         </div>
     </header>
 
- <nav>
-  <div class="container">
-    <div class="nav-toggle" id="navToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="about.html">О клубе</a></li>
-      <li><a href="players.html">Игроки</a></li>
-      <li><a href="schedule.html">Матчи</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-      <li><a href="legends.html">Зал славы</a></li>
-    </ul>
-  </div>
-</nav>
-
-
     <main class="container">
-        <section>
-            <h2>Добро пожаловать!</h2>
-            <p>Официальный сайт футбольного клуба «Торнадо». Здесь вы найдёте актуальную информацию о команде, расписании матчей, составе игроков и контактах клуба.</p>
+        <section class="content-section">
+            <h2><i class="fas fa-info-circle"></i> О нашем клубе</h2>
+            <p>Добро пожаловать на официальный сайт футбольного клуба "Торнадо"! Мы — молодая, амбициозная команда из исторического города Боровичи, созданная для развития футбола в нашем регионе и достижения высоких спортивных результатов.</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Город</h3>
+                    <p>Мы представляем славный город <strong>Боровичи</strong> — один из старейших городов Новгородской области с богатой историей и традициями.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-calendar-alt"></i> Дата основания</h3>
+                    <p>Наша команда была основана <strong>29 июля 2025 года</strong>. С этого момента начинается наша футбольная история и путь к будущим победам.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-users"></i> Сообщество</h3>
+                    <p>Мы активно растем и развиваемся. Присоединяйтесь к нашему сообществу болельщиков и станьте частью истории ФК "Торнадо"!</p>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>Последние новости</h2>
-            <ul>
-                <li>Тренировочный сбор прошёл успешно.</li>
-                <li>Новый спонсор подписал контракт с клубом.</li>
-                <li>В клуб вернулась легенда</li>
-            </ul>
+        <section class="content-section">
+            <h2><i class="fas fa-palette"></i> Клубные цвета</h2>
+            <p>Наши официальные цвета отражают характер команды:</p>
+            
+            <div class="color-samples">
+                <div class="color-box blue">
+                    Синий<br>💙
+                </div>
+                <div class="color-box white">
+                    Белый<br>🤍
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px;">Синий цвет символизирует надежность, силу духа и верность нашим принципам. Белый — чистоту намерений, честную игру и стремление к совершенству.</p>
+        </section>
+
+        <!-- Трофеи -->
+        <section class="trophies-section fade-in">
+            <h2><i class="fas fa-trophy"></i> Трофеи и достижения</h2>
+            <p>Награды и достижения ФК "Торнадо" с момента основания клуба. Каждый трофей — это результат упорной работы всей команды.</p>
+            
+            <div class="empty-trophy">
+                <div class="trophy-icon-large">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="no-trophies-text">Пока нету</div>
+                <div class="no-trophies-subtext">
+                    Мы молодая команда, и наши трофеи только впереди! Участвуем в турнирах и стремимся к первым победам.
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <div class="trophy-placeholder">Будущие победы ждут нас</div>
+                    <div class="trophy-placeholder">Первый кубок скоро будет наш</div>
+                    <div class="trophy-placeholder">Мы только начинаем наш путь</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="telegram-section">
+            <h2><i class="fab fa-telegram"></i> Присоединяйтесь к нам в Telegram!</h2>
+            <p>Вся актуальная информация, новости, анонсы матчей и эксклюзивный контент публикуется в нашем официальном Telegram-канале. Подписывайтесь, чтобы быть в курсе всех событий ФК "Торнадо"!</p>
+            
+            <a href="https://t.me/aznbffy" target="_blank" class="telegram-link">
+                <i class="fab fa-telegram telegram-icon"></i>
+                Перейти в канал ФК "ТОРНАДО"💙🤍
+            </a>
+            
+            <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;">
+                <i class="fas fa-users"></i> Уже более 70 подписчиков в нашем сообществе
+            </p>
+        </section>
+
+        <section class="friends-section fade-in">
+            <h2><i class="fas fa-handshake"></i> Наши товарищи</h2>
+            <p>Мы поддерживаем дружеские отношения и сотрудничаем с другими футбольными клубами. Особенно хотим отметить наших друзей из ФК "Ночные Волки" — команду с отличным спортивным духом и стремлением к победе!</p>
+            
+            <a href="https://t.me/+DPYC72aIOMs0Yzli" target="_blank" class="friends-link">
+                <i class="fab fa-telegram wolf-icon"></i>
+                Перейти в канал ФК "Ночные Волки"
+            </a>
+            
+            <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;">
+                <i class="fas fa-users"></i> Поддержим наших товарищей!
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2><i class="fas fa-bullhorn"></i> Контакты и поддержка</h2>
+            <p>По всем вопросам сотрудничества, участия в матчах или поддержки клуба обращайтесь через наш Telegram-канал. Мы открыты для диалога и новых предложений!</p>
+            <p>ФК "Торнадо" — это не просто футбольная команда, это сообщество единомышленников, любящих футбол и свой город.</p>
         </section>
     </main>
 
-   
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 ФК Торнадо. Все права защищены.</p>
-        </div>
+    <footer class="container">
+        <p>© 2025-2026 Футбольный клуб "ТОРНАДО". Все права защищены.</p>
+        <p>Официальный сайт клуба | Боровичи, Новгородская область</p>
+        <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">Дата последнего обновления сайта: 07.01.2026</p>
     </footer>
-<script src="mobile-menu.js"></script>
-</body>
 
+    <script>
+        // Небольшой интерактивный эффект при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            // Плавное появление элементов
+            const elements = document.querySelectorAll('.content-section, .telegram-section, .friends-section, .trophies-section');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100 + (index * 150));
+            });
+            
+            // Подсчет "подписчиков" для анимации
+            const subCount = document.querySelector('.telegram-section p:last-child');
+            if (subCount) {
+                let count = 0;
+                const target = 74;
+                const interval = setInterval(() => {
+                    count += Math.ceil(target / 30);
+                    if (count >= target) {
+                        count = target;
+                        clearInterval(interval);
+                    }
+                    subCount.innerHTML = `<i class="fas fa-users"></i> Уже более ${count} подписчиков в нашем сообществе`;
+                }, 50);
+            }
+            
+            // Анимация для текста "Пока нету"
+            const noTrophiesText = document.querySelector('.no-trophies-text');
+            if (noTrophiesText) {
+                const text = noTrophiesText.textContent;
+                noTrophiesText.innerHTML = '';
+                
+                for (let i = 0; i < text.length; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = text[i];
+                    span.style.display = 'inline-block';
+                    span.style.opacity = '0';
+                    span.style.transform = 'translateY(20px)';
+                    span.style.transition = `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease ${i * 0.1}s`;
+                    noTrophiesText.appendChild(span);
+                    
+                    setTimeout(() => {
+                        span.style.opacity = '1';
+                        span.style.transform = 'translateY(0)';
+                    }, 500 + (i * 100));
+                }
+            }
+        });
+    </script>
+</body>
 </html>
