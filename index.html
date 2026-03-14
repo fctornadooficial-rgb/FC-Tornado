@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)https://fctornadooficial-rgb.github.io/FC-Tornado/ -->
-<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./ФК _ТОРНАДО_ _ Официальный сайт_files/mobile-optimization.js.Без названия"></script>
-
-    
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ФК "ТОРНАДО" | Официальный сайт</title>
     <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%F0%9F%92%99&lt;/text&gt;&lt;/svg&gt;">
@@ -21,12 +20,30 @@
             line-height: 1.6;
             min-height: 100vh;
             padding-bottom: 40px;
+            position: relative;
+        }
+
+        /* Фоновый логотип (водяной знак) */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><circle cx="50" cy="50" r="45" fill="%231e3c72"/><text x="50" y="70" font-size="60" text-anchor="middle" fill="%23ffffff" font-family="Arial, sans-serif" font-weight="bold">Т</text></svg>');
+            background-repeat: repeat;
+            background-size: 120px 120px;
+            pointer-events: none;
+            z-index: -1;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
 
         /* Шапка */
@@ -49,6 +66,26 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+
+        .club-name-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .club-logo {
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+        }
+
+        .club-logo svg {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
 
         .club-name {
@@ -176,6 +213,27 @@
             justify-content: center;
         }
 
+        .telegram-link-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .telegram-link-logo {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+        }
+
+        .telegram-link-logo svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
         .telegram-link {
             display: inline-flex;
             align-items: center;
@@ -187,7 +245,6 @@
             border-radius: 50px;
             font-weight: 700;
             font-size: 1.3rem;
-            margin-top: 1.5rem;
             transition: all 0.3s ease;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
@@ -416,6 +473,11 @@
             .trophy-icon-large {
                 font-size: 4rem;
             }
+
+            .club-logo {
+                width: 50px;
+                height: 50px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -445,11 +507,20 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="club-name">
-                <span class="emoji">💙</span>
-                ФК "ТОРНАДО"
-                <span class="emoji">🤍</span>
-            </h1>
+            <div class="club-name-wrapper">
+                <!-- Логотип около названия -->
+                <div class="club-logo">
+                    <svg viewBox="0 0 100 100" xmlns="https://cdn4.telesco.pe/file/QyjoQG9M4Y6n8SxPAA-e7oN8i6C8_Pk_n31mVqOKoZwBVdfcOFC-w-o0GKJvVhFKWUdRGHicjbDxbWmCok1FIcy7aRo48-X62IAKSZXFrgQO8nlseT8vcteKOTcI8TUapLnxpWzcRgaMKJfVO79STyDouJtNXLMEhhLx1hbLZYVJKZnS_MN_p_6wRPDxvdtCv2kIe2LJr3-g3WtRO5GPrMBlQVHYNObco7z7D-iSdqms3cpBbPlIOz70v_yCNYJGJfh_73QwfY_8VdbwTeq-lL36FhYlYj2UV8JVLGH6OMGh27zoFn5mnX5D7BURdZWqCoHgoxBv-u2s1ScQ7z_MyQ.jpg">
+                        <circle cx="50" cy="50" r="45" fill="#1e3c72" stroke="#ffffff" stroke-width="3"/>
+                        <text x="50" y="70" font-size="60" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="bold">Т</text>
+                    </svg>
+                </div>
+                <h1 class="club-name">
+                    <span class="emoji">💙</span>
+                    ФК "ТОРНАДО"
+                    <span class="emoji">🤍</span>
+                </h1>
+            </div>
             <p class="tagline">Футбольная команда из города Боровичи. Основана 29.07.2025</p>
         </div>
     </header>
@@ -519,10 +590,19 @@
             <h2><i class="fab fa-telegram"></i> Присоединяйтесь к нам в Telegram!</h2>
             <p>Вся актуальная информация, новости, анонсы матчей и эксклюзивный контент публикуется в нашем официальном Telegram-канале. Подписывайтесь, чтобы быть в курсе всех событий ФК "Торнадо"!</p>
             
-            <a href="https://t.me/FCTornado1" target="_blank" class="telegram-link">
-                <i class="fab fa-telegram telegram-icon"></i>
-                Перейти в канал ФК "ТОРНАДО"💙🤍
-            </a>
+            <div class="telegram-link-wrapper">
+                <!-- Логотип около ссылки на Telegram -->
+                <div class="telegram-link-logo">
+                    <svg viewBox="0 0 100 100" xmlns="https://cdn4.telesco.pe/file/QyjoQG9M4Y6n8SxPAA-e7oN8i6C8_Pk_n31mVqOKoZwBVdfcOFC-w-o0GKJvVhFKWUdRGHicjbDxbWmCok1FIcy7aRo48-X62IAKSZXFrgQO8nlseT8vcteKOTcI8TUapLnxpWzcRgaMKJfVO79STyDouJtNXLMEhhLx1hbLZYVJKZnS_MN_p_6wRPDxvdtCv2kIe2LJr3-g3WtRO5GPrMBlQVHYNObco7z7D-iSdqms3cpBbPlIOz70v_yCNYJGJfh_73QwfY_8VdbwTeq-lL36FhYlYj2UV8JVLGH6OMGh27zoFn5mnX5D7BURdZWqCoHgoxBv-u2s1ScQ7z_MyQ.jpg">
+                        <circle cx="50" cy="50" r="45" fill="#1e3c72" stroke="#ffffff" stroke-width="3"/>
+                        <text x="50" y="70" font-size="60" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="bold">Т</text>
+                    </svg>
+                </div>
+                <a href="https://t.me/FCTornado1" target="_blank" class="telegram-link">
+                    <i class="fab fa-telegram telegram-icon"></i>
+                    Перейти в канал ФК "ТОРНАДО"💙🤍
+                </a>
+            </div>
             
             <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;"><i class="fas fa-users"></i> Уже более 74 подписчиков в нашем сообществе</p>
         </section>
@@ -573,7 +653,7 @@
     <footer class="container">
         <p>© 2025-2026 Футбольный клуб "ТОРНАДО". Все права защищены.</p>
         <p>Официальный сайт клуба | Боровичи, Новгородская область</p>
-        <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">Дата последнего обновления сайта: 10.02.2026</p>
+        <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">Дата последнего обновления сайта: 14.03.2026</p>
     </footer>
 
     <script>
@@ -630,6 +710,5 @@
             }
         });
     </script>
-
-
-<script id="9ybmFkby8=" src="./ФК _ТОРНАДО_ _ Официальный сайт_files/saved_resource"></script></body></html>
+</body>
+</html>
