@@ -572,8 +572,6 @@
                 <i class="fab fa-telegram telegram-icon"></i>
                 Перейти в канал ФК "ТОРНАДО"💙🤍
             </a>
-            
-            <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;"><i class="fas fa-users"></i> Уже более 74 подписчиков в нашем сообществе</p>
         </section>
 
         <!-- Новые разделы -->
@@ -639,21 +637,6 @@
                     el.style.transform = 'translateY(0)';
                 }, 100 + (index * 150));
             });
-            
-            // Подсчет "подписчиков" для анимации
-            const subCount = document.querySelector('.telegram-section p:last-child');
-            if (subCount) {
-                let count = 0;
-                const target = 74;
-                const interval = setInterval(() => {
-                    count += Math.ceil(target / 30);
-                    if (count >= target) {
-                        count = target;
-                        clearInterval(interval);
-                    }
-                    subCount.innerHTML = `<i class="fas fa-users"></i> Уже более ${count} подписчиков в нашем сообществе`;
-                }, 50);
-            }
             
             // Анимация для текста "Пока нету"
             const noTrophiesText = document.querySelector('.no-trophies-text');
