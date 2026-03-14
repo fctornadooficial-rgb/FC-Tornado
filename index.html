@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ФК "ТОРНАДО" | Официальный сайт</title>
-    <link rel="icon" href="tornado.jpg">
+    <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%F0%9F%92%99&lt;/text&gt;&lt;/svg&gt;">
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -53,7 +53,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.5;
+            opacity: 0.1;
             transform: translate(-50%, -50%);
             pointer-events: none;
         }
@@ -429,7 +429,6 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.5;
             animation: fall linear infinite;
         }
 
@@ -572,6 +571,8 @@
                 <i class="fab fa-telegram telegram-icon"></i>
                 Перейти в канал ФК "ТОРНАДО"💙🤍
             </a>
+            
+            <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;"><i class="fas fa-users"></i> Уже более 74 подписчиков в нашем сообществе</p>
         </section>
 
         <!-- Новые разделы -->
@@ -637,6 +638,21 @@
                     el.style.transform = 'translateY(0)';
                 }, 100 + (index * 150));
             });
+            
+            // Подсчет "подписчиков" для анимации
+            const subCount = document.querySelector('.telegram-section p:last-child');
+            if (subCount) {
+                let count = 0;
+                const target = 74;
+                const interval = setInterval(() => {
+                    count += Math.ceil(target / 30);
+                    if (count >= target) {
+                        count = target;
+                        clearInterval(interval);
+                    }
+                    subCount.innerHTML = `<i class="fas fa-users"></i> Уже более ${count} подписчиков в нашем сообществе`;
+                }, 50);
+            }
             
             // Анимация для текста "Пока нету"
             const noTrophiesText = document.querySelector('.no-trophies-text');
