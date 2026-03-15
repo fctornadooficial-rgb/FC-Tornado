@@ -32,7 +32,7 @@
         /* Шапка страницы легенд */
         .legends-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .legends-header h1 {
@@ -49,18 +49,18 @@
             font-style: italic;
         }
 
-        /* Сетка карточек */
+        /* Сетка карточек — теперь колонки уже */
         .legends-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* min-width уменьшен с 280px до 200px */
+            gap: 25px;
             margin-top: 30px;
         }
 
         /* Карточка игрока */
         .legend-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -68,44 +68,46 @@
         }
 
         .legend-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: 0 20px 30px rgba(30, 60, 114, 0.2);
         }
 
-        /* Блок фото с фиксированной высотой 150px */
+        /* Фото теперь выше — 250px */
         .legend-photo {
             width: 100%;
-            height: 150px;          /* ← изменено с 250px на 150px */
+            height: 250px;          /* увеличено с 150px до 250px */
             overflow: hidden;
             background: #1e3c72;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 3rem;        /* для плейсхолдера */
+            font-size: 3rem;
         }
 
         .legend-photo img {
             width: 100%;
             height: 100%;
-            object-fit: cover;      /* обрезает фото, заполняя контейнер без искажений */
+            object-fit: cover;      /* заполняет контейнер без искажений */
             display: block;
         }
 
+        /* Информационная часть — уменьшены отступы для узких карточек */
         .legend-info {
-            padding: 20px;
+            padding: 15px 12px 20px;
             text-align: center;
         }
 
         .legend-name {
-            font-size: 1.8rem;
+            font-size: 1.5rem;      /* немного уменьшен, чтобы помещалось */
             font-weight: 700;
             color: #1e3c72;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            line-height: 1.2;
         }
 
         .legend-age {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #2a5298;
             margin-bottom: 8px;
             font-weight: 500;
@@ -113,12 +115,13 @@
 
         .legend-period {
             background: #f0f4ff;
-            padding: 8px 15px;
+            padding: 6px 12px;
             border-radius: 30px;
             display: inline-block;
             font-weight: 600;
             color: #1e3c72;
             border: 1px solid #d0d9ff;
+            font-size: 0.9rem;
         }
 
         /* Кнопка возврата на главную */
@@ -145,16 +148,26 @@
             margin-right: 10px;
         }
 
-        /* Адаптивность */
+        /* Адаптивность для мобильных */
         @media (max-width: 768px) {
             .legends-header h1 {
                 font-size: 2.2rem;
             }
-            .legend-name {
-                font-size: 1.5rem;
+            .legends-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 15px;
             }
             .legend-photo {
-                height: 130px;       /* чуть меньше на мобильных */
+                height: 200px;
+            }
+            .legend-name {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .legend-photo {
+                height: 180px;
             }
         }
     </style>
@@ -170,7 +183,6 @@
             <!-- Карточка 1 -->
             <div class="legend-card">
                 <div class="legend-photo">
-                    <!-- Замените src на реальное фото, размер подстроится -->
                     <img src="anar.jpg">
                 </div>
                 <div class="legend-info">
@@ -179,8 +191,6 @@
                     <div class="legend-period">2024 – н.в.</div>
                 </div>
             </div>
-
-            <!-- При необходимости добавьте новые карточки по такому же шаблону -->
         </div>
 
         <div style="text-align: center;">
