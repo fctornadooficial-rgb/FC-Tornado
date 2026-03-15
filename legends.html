@@ -52,7 +52,7 @@
         /* Сетка карточек — теперь колонки уже */
         .legends-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* min-width уменьшен с 280px до 200px */
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* min-width уменьшен с 280px до 200px */
             gap: 25px;
             margin-top: 30px;
         }
@@ -65,6 +65,7 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #e0e0e0;
+            transform: scaleY(200)
         }
 
         .legend-card:hover {
