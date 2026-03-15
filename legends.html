@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Легенды ФК "ТОРНАДО"</title>
+    <link rel="icon" href="tornado.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка страницы легенд */
+        .legends-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .legends-header h1 {
+            font-size: 3rem;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .legends-header p {
+            font-size: 1.2rem;
+            color: #2a5298;
+            font-style: italic;
+        }
+
+        /* Сетка карточек */
+        .legends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* Карточка игрока */
+        .legend-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .legend-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(30, 60, 114, 0.2);
+        }
+
+        .legend-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: #1e3c72;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+
+        .legend-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .legend-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .legend-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+
+        .legend-age {
+            font-size: 1.2rem;
+            color: #2a5298;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .legend-period {
+            background: #f0f4ff;
+            padding: 8px 15px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 600;
+            color: #1e3c72;
+            border: 1px solid #d0d9ff;
+        }
+
+        /* Кнопка возврата на главную */
+        .back-button {
+            display: inline-block;
+            margin: 40px 0 20px;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid white;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(30,60,114,0.3);
+        }
+
+        .back-button i {
+            margin-right: 10px;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .legends-header h1 {
+                font-size: 2.2rem;
+            }
+            .legend-name {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="legends-header">
+            <h1><i class="fas fa-crown" style="color: #ffd700;"></i> Легенды клуба</h1>
+            <p>Игроки, оставившие след в истории ФК «Торнадо»</p>
+        </div>
+
+        <div class="legends-grid">
+            <!-- Карточка 1 -->
+            <div class="legend-card">
+                <div class="legend-photo">
+                    <!-- Замените src на реальное фото -->
+                    <img src="https://via.placeholder.com/300x250/1e3c72/ffffff?text=Игрок+1" alt="Алексей Смирнов">
+                </div>
+                <div class="legend-info">
+                    <div class="legend-name">Алексей Смирнов</div>
+                    <div class="legend-age">27 лет</div>
+                    <div class="legend-period">2025 – н.в.</div>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="legend-card">
+                <div class="legend-photo">
+                    <img src="https://via.placeholder.com/300x250/2a5298/ffffff?text=Игрок+2" alt="Дмитрий Волков">
+                </div>
+                <div class="legend-info">
+                    <div class="legend-name">Дмитрий Волков</div>
+                    <div class="legend-age">24 года</div>
+                    <div class="legend-period">2025 – н.в.</div>
+                </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="legend-card">
+                <div class="legend-photo">
+                    <img src="https://via.placeholder.com/300x250/1e3c72/ffffff?text=Игрок+3" alt="Иван Петров">
+                </div>
+                <div class="legend-info">
+                    <div class="legend-name">Иван Петров</div>
+                    <div class="legend-age">29 лет</div>
+                    <div class="legend-period">2025 – н.в.</div>
+                </div>
+            </div>
+
+            <!-- Карточка 4 -->
+            <div class="legend-card">
+                <div class="legend-photo">
+                    <img src="https://via.placeholder.com/300x250/2a5298/ffffff?text=Игрок+4" alt="Сергей Кузнецов">
+                </div>
+                <div class="legend-info">
+                    <div class="legend-name">Сергей Кузнецов</div>
+                    <div class="legend-age">26 лет</div>
+                    <div class="legend-period">2025 – н.в.</div>
+                </div>
+            </div>
+
+            <!-- Добавьте больше карточек по необходимости -->
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> На главную</a>
+        </div>
+    </div>
+</body>
+</html>
