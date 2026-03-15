@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* предыдущие стили без изменений */
+        /* ==== БАЗОВЫЕ СТИЛИ (без изменений, только добавлены новые) ==== */
         * {
             margin: 0;
             padding: 0;
@@ -243,7 +243,7 @@
             font-size: 1.2rem;
         }
 
-        /* Секция контактов */
+        /* Секция контактов (обновлено) */
         .contacts-section {
             background: white;
             border-radius: 16px;
@@ -263,14 +263,72 @@
             margin-bottom: 1.8rem;
         }
 
-        .contacts-placeholder {
-            padding: 2rem;
-            margin: 1.5rem 0;
-            background: #f8f9fa;
-            border-radius: 12px;
+        /* Красивые ссылки-кнопки для контактов */
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #f0f4ff;
+            color: #1e3c72;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
             font-size: 1.1rem;
-            text-align: center;
-            color: #666;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-button i {
+            font-size: 1.4rem;
+            transition: transform 0.3s;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(30, 60, 114, 0.2);
+            border-color: #2a5298;
+            background: white;
+        }
+
+        .contact-button:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Специфические цвета для брендов */
+        .contact-button.telegram:hover {
+            background: #0088cc;
+            color: white;
+            border-color: #0088cc;
+        }
+        .contact-button.tiktok:hover {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+        .contact-button.email:hover {
+            background: #d44638;
+            color: white;
+            border-color: #d44638;
+        }
+        .contact-button.vk:hover {
+            background: #4a76a8;
+            color: white;
+            border-color: #4a76a8;
+        }
+        .contact-button.bot:hover {
+            background: #2a5298;
+            color: white;
+            border-color: #2a5298;
         }
 
         /* Секция новостей */
@@ -383,7 +441,7 @@
             border: 1px solid #d0d9ff;
         }
 
-        /* Футер */
+        /* Футер (добавлена секретная кнопка) */
         footer {
             text-align: center;
             margin-top: 3rem;
@@ -393,6 +451,34 @@
             font-size: 0.95rem;
             position: relative;
             z-index: 1;
+        }
+
+        /* Секретная кнопка */
+        .secret-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(30, 60, 114, 0.2);
+            color: #1e3c72;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            backdrop-filter: blur(2px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .secret-link:hover {
+            background: rgba(30, 60, 114, 0.8);
+            color: white;
+            transform: scale(1.2);
+            box-shadow: 0 0 15px #1e3c72;
         }
 
         /* Анимации */
@@ -511,7 +597,6 @@
             font-size: 1.2rem;
         }
 
-        /* Уведомление об успехе */
         .success-message {
             background: #d4edda;
             color: #155724;
@@ -528,7 +613,6 @@
             display: none;
         }
 
-        /* Защита от спама (скрытое поле) */
         .honeypot {
             display: none;
         }
@@ -559,6 +643,14 @@
             
             .trophy-icon-large {
                 font-size: 4rem;
+            }
+
+            .contact-links {
+                gap: 12px;
+            }
+            .contact-button {
+                padding: 8px 16px;
+                font-size: 0.95rem;
             }
         }
 
@@ -670,7 +762,7 @@
             <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;"><i class="fas fa-users"></i> Уже более 74 подписчиков в нашем сообществе</p>
         </section>
 
-        <!-- Новые разделы -->
+        <!-- Ближайшие матчи -->
         <section class="matches-section fade-in" id="section-4">
             <h2><i class="fas fa-futbol"></i> Ближайшие матчи</h2>
             
@@ -680,46 +772,37 @@
             </div>
         </section>
 
+        <!-- Контакты (обновлено) -->
         <section class="contacts-section fade-in" id="section-5">
             <h2><i class="fas fa-address-book"></i> Контакты</h2>
             <p>Свяжитесь с нами по любым вопросам, касающимся клуба, сотрудничества или участия в матчах.</p>
             
-            <div class="contacts-placeholder">
-                <a href="https://t.me/FCTornado1">Телеграмм</a>
-                <p>ТикТок: @fc.tornado.oficial</p>
-                <p>Почта: fctornado.oficial@gmail.com</p>
-                <a href="https://t.me/FCTornado_support_bot">Телеграмм Бот</a>
+            <div class="contact-links">
+                <a href="https://t.me/FCTornado1" target="_blank" class="contact-button telegram">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="https://www.tiktok.com/@fc.tornado.oficial" target="_blank" class="contact-button tiktok">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </a>
+                <a href="mailto:fctornado.oficial@gmail.com" class="contact-button email">
+                    <i class="fas fa-envelope"></i> Почта
+                </a>
+                <a href="https://vk.com/club234247120" target="_blank" class="contact-button vk">
+                    <i class="fab fa-vk"></i> VK
+                </a>
+                <a href="https://t.me/FCTornado_support_bot" target="_blank" class="contact-button bot">
+                    <i class="fab fa-telegram"></i> Бот
+                </a>
             </div>
-        </section>
 
-        <section class="news-section fade-in" id="section-6">
-            <h2><i class="fas fa-newspaper"></i> Новости клуба</h2>
-            <p>Самые свежие новости, события и анонсы ФК "Торнадо". Будьте в курсе всех событий нашей команды!</p>
-            
-            <div class="news-placeholder">
-                Разорванны отношения с Ночными Волками
-            </div>
-        </section>
-
-        <!-- Раздел "Контакты и поддержка" с формой обратной связи -->
-        <section class="content-section" id="section-7">
-            <h2><i class="fas fa-bullhorn"></i> Контакты и поддержка</h2>
-            <p>Оставьте свой отзыв или задайте вопрос — мы обязательно ответим вам по email.</p>
-
-            <!-- Блок уведомления об успешной отправке (скрыт по умолчанию) -->
+            <!-- Форма обратной связи (остаётся) -->
             <div id="success-message" class="success-message hidden">
                 <i class="fas fa-check-circle"></i> Спасибо за отзыв! Мы получили ваше сообщение.
             </div>
-
-            <!-- Форма отправляется на FormSubmit.co (перенаправляет обратно на эту же страницу) -->
             <form class="feedback-form" action="https://formsubmit.co/fctornado.oficial@gmail.com" method="POST">
-                <!-- Защита от спама: скрытое поле honeypot -->
-                <input type="text" name="_honey" class="honeypot" style="display:none">
-                <!-- Отключить капчу (можно включить позже, если нужно) -->
+                <input type="text" name="_honey" class="honeypot">
                 <input type="hidden" name="_captcha" value="false">
-                <!-- Перенаправление после отправки на эту же страницу с параметром success -->
                 <input type="hidden" name="_next" value="https://fctornadooficial-rgb.github.io/FC-Tornado/?success=1">
-                <!-- Поля формы -->
                 <div class="form-group">
                     <label><i class="fas fa-user"></i> Ваше имя</label>
                     <input type="text" name="name" placeholder="Введите имя" required>
@@ -736,14 +819,37 @@
                     <i class="fas fa-paper-plane"></i> Отправить отзыв
                 </button>
             </form>
+        </section>
 
-            <!-- Дополнительные контакты (дублируем для удобства) -->
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
-                <p style="margin-bottom: 10px;"><i class="fas fa-phone-alt"></i> Также вы можете связаться с нами через:</p>
-                <a href="https://t.me/FCTornado1" style="margin-right: 20px;">Телеграмм</a>
-                <span>ТикТок: @fc.tornado.oficial</span>
-                <span style="margin-left: 20px;">Почта: fctornado.oficial@gmail.com</span>
-                <a href="https://t.me/FCTornado_support_bot" style="margin-left: 20px;">Телеграмм Бот</a>
+        <section class="news-section fade-in" id="section-6">
+            <h2><i class="fas fa-newspaper"></i> Новости клуба</h2>
+            <p>Самые свежие новости, события и анонсы ФК "Торнадо". Будьте в курсе всех событий нашей команды!</p>
+            
+            <div class="news-placeholder">
+                Разорванны отношения с Ночными Волками
+            </div>
+        </section>
+
+        <!-- Контакты и поддержка (дубль) - оставляем как есть, но можно объединить, оставим для совместимости -->
+        <section class="content-section" id="section-7">
+            <h2><i class="fas fa-bullhorn"></i> Контакты и поддержка</h2>
+            <p>Дополнительные контакты:</p>
+            <div class="contact-links">
+                <a href="https://t.me/FCTornado1" target="_blank" class="contact-button telegram">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="https://www.tiktok.com/@fc.tornado.oficial" target="_blank" class="contact-button tiktok">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </a>
+                <a href="mailto:fctornado.oficial@gmail.com" class="contact-button email">
+                    <i class="fas fa-envelope"></i> Почта
+                </a>
+                <a href="https://vk.com/club234247120" target="_blank" class="contact-button vk">
+                    <i class="fab fa-vk"></i> VK
+                </a>
+                <a href="https://t.me/FCTornado_support_bot" target="_blank" class="contact-button bot">
+                    <i class="fab fa-telegram"></i> Бот
+                </a>
             </div>
         </section>
     </main>
@@ -753,6 +859,9 @@
         <p>Официальный сайт клуба | Боровичи, Новгородская область</p>
         <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">Дата последнего обновления сайта: 10.02.2026</p>
     </footer>
+
+    <!-- Секретная кнопка (ведёт на страницу легенд) -->
+    <a href="legends.html" class="secret-link" title="Легенды клуба">⚡</a>
 
     <!-- Контейнер для падающих логотипов -->
     <div class="falling-logos"></div>
@@ -772,7 +881,7 @@
                 }, 100 + (index * 150));
             });
             
-            // Подсчет "подписчиков" для анимации
+            // Подсчет "подписчиков"
             const subCount = document.querySelector('.telegram-section p:last-child');
             if (subCount) {
                 let count = 0;
@@ -833,23 +942,21 @@
                 fallingContainer.appendChild(logo);
             }
 
-            // Проверка параметра success в URL (для отображения уведомления)
+            // Уведомление об успешной отправке формы
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.has('success') && urlParams.get('success') === '1') {
                 const successMsg = document.getElementById('success-message');
                 if (successMsg) {
                     successMsg.classList.remove('hidden');
-                    // Плавно скрыть через 5 секунд
                     setTimeout(() => {
                         successMsg.style.transition = 'opacity 0.5s';
                         successMsg.style.opacity = '0';
                         setTimeout(() => {
                             successMsg.classList.add('hidden');
-                            successMsg.style.opacity = '1'; // сброс для следующего раза
+                            successMsg.style.opacity = '1';
                         }, 500);
                     }, 5000);
                 }
-                // Удаляем параметр из URL без перезагрузки страницы
                 const newUrl = window.location.pathname + window.location.hash;
                 window.history.replaceState({}, document.title, newUrl);
             }
