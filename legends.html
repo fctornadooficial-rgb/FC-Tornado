@@ -228,4 +228,28 @@
         </div>
     </div>
 </body>
+<script>
+     const fallingContainer = document.querySelector('.falling-logos');
+            const numberOfLogos = 30;
+
+            for (let i = 0; i < numberOfLogos; i++) {
+                const logo = document.createElement('div');
+                logo.className = 'falling-logo';
+                
+                const size = Math.floor(Math.random() * 80 + 40) + 'px';
+                const left = Math.random() * 100 + '%';
+                const duration = Math.random() * 10 + 10 + 's';
+                const delay = Math.random() * -20 + 's';
+                const opacity = Math.random() * 0.1 + 0.05;
+                
+                logo.style.width = size;
+                logo.style.height = size;
+                logo.style.left = left;
+                logo.style.animationDuration = duration;
+                logo.style.animationDelay = delay;
+                logo.style.opacity = opacity;
+                
+                fallingContainer.appendChild(logo);
+            }
+</script>
 </html>
